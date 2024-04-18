@@ -1,5 +1,10 @@
 .app.light {
   --bg-color: rgb(216, 216, 233);
+  --inverted-bg-color: rgb(48, 48, 188);
+  
   --primary-color: rgb(0, 77, 128);
   --secondary-color: rgb(0, 255, 242);
+
+  --inverted-primary-color: green;
+  --inverted-secondary-color: yellow;
 }
