@@ -2,6 +2,7 @@ import React from "react";
 
 import { classNames } from "shared/lib/classNames";
 import { ThemeSwitcher } from "shared/ThemeSwitcher";
+import { LanguageSwitcher } from "shared/LanguageSwitcher";
 
 import cls from "./SideBar.module.scss";
 
@@ -13,16 +14,20 @@ export const SideBar = ({ className }: SideBarProps) => {
   const [collapsed, setCollapsed] = React.useState(false);
 
   const onToggle = () => {
-    setCollapsed((prev) => !prev)
-  }
+    setCollapsed((prev) => !prev);
+  };
 
   return (
-    <div className={classNames(cls.sidebar, {[cls.collapsed]: collapsed}, [className])}>
-       <button onClick={onToggle}>toggle</button>
-       <div className={cls.swithers}>
-           <ThemeSwitcher />
-       </div>
-
+    <div
+      className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
+        className,
+      ])}
+    >
+      <button onClick={onToggle}>toggle</button>
+      <div className={cls.swithers}>
+        <ThemeSwitcher />
+        <LanguageSwitcher className={cls.lang} />
+      </div>
     </div>
   );
 };

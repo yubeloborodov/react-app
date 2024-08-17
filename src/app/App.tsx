@@ -13,11 +13,13 @@ export default function App() {
 
   return (
     <div className={classNames("app", {}, [theme])}>
-      <NavBar />
-      <div className="content-page">
-        <SideBar />
-        <AppRouter />
-      </div>
+      <React.Suspense fallback="">
+        <NavBar />
+        <div className="content-page">
+          <SideBar />
+          <AppRouter />
+        </div>
+      </React.Suspense>
     </div>
   );
 }
